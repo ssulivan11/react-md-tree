@@ -1,2 +1,1 @@
-<div><div><h1>🌳 React MD Tree</h1>
----</div><ul style="list-style-type:none;padding:0" id="react-md-tree"><li>bin<ul id="bin"></ul></li><li>dist<ul id="dist"></ul></li><li>src<ul id="src"><li><a href="components">components</a></li></ul></li><li><a href="MDTREE">MDTREE</a></li><li><a href="README">README</a></li></ul></div>
+<div><div><h1>🌳 React MD Tree</h1><blockquote>Generate your folder structure.</blockquote><p>First install:<br /><pre><code class='lang-js'>npm install react-md-tree --save-dev</code></pre></p></div><ul style="list-style-type:none;padding:0" id="react-md-tree"><li>bin<ul id="bin"></ul></li><li>dist<ul id="dist"></ul></li><li>src<ul id="src"><li><a href="components">components</a></li></ul></li></ul></div>

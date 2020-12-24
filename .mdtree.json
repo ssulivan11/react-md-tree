@@ -1,4 +1,4 @@
 {
-    "header": "<h1>🌳 React MD Tree</h1>",
+    "header": "<h1>🌳 React MD Tree</h1><p>Generate your folder structure with ease.</p><p>First install:<br /><pre><code class='lang-js'>npm install react-md-tree --save-dev</code></pre></p><p>Then run the script:<br /><pre><code class='lang-js'>react-md-tree --exclude dist</code></pre></p>",
     "output": "README.md"
 }
