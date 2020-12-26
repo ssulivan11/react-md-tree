@@ -14,7 +14,7 @@ const RootDirectory = ({ tree }: IDirectoryProps) => {
                     }}
                 />
             )}
-            <ul style={{ listStyleType: 'none', padding: 0 }} id={rootName}>
+            <ul style={{ listStyleType: 'none', padding: 0 }} data-testid={rootName} id={rootName}>
                 {childDirs.map((childDir, index) => (
                     <Directory key={index} tree={childDir} depth={1} />
                 ))}
@@ -26,4 +26,4 @@ const RootDirectory = ({ tree }: IDirectoryProps) => {
     );
 };
 
-export default RootDirectory;
+export { RootDirectory };

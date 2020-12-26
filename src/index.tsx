@@ -1,7 +1,7 @@
 import path from 'path';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import DirectoryTree from './components/DirectoryTree';
+import { RootDirectory } from './components/RootDirectory';
 import { initConfig, getConfig, parseValidRegexArray } from './config';
 import * as FSUtils from './fsUtils';
 
@@ -74,7 +74,7 @@ const run = async (configPath) => {
         const dirPath = path.resolve(FSUtils.resolveHome(getConfig('source')));
         const tree = await mdFileTree(dirPath, getConfig('linkPrefix'));
         // @ts-ignore
-        const treeHtml = ReactDOMServer.renderToStaticMarkup(<DirectoryTree tree={tree} />);
+        const treeHtml = ReactDOMServer.renderToStaticMarkup(<RootDirectory tree={tree} />);
         const outputPath = path.resolve(FSUtils.resolveHome(program.output || getConfig('output')));
         // @ts-ignore
         await FSUtils.writeFilePromise(outputPath, treeHtml);

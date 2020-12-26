@@ -1,6 +1,6 @@
 export interface IDirectoryProps {
     tree: any;
-    depth: number;
+    depth?: number;
 }
 
 interface IChildDirs {

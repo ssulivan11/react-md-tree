@@ -2,11 +2,11 @@ import React from 'react';
 import * as FSUtils from '../fsUtils';
 
 interface IFileProps {
-    fileName: string;
+    fileName: any;
 }
 
 const File = ({ fileName }: IFileProps) => {
-    const fileNameTrimmed = FSUtils.trimExtension(fileName);
+    const fileNameTrimmed = FSUtils.trimExtension(fileName.rootName);
     return (
         <li>
             <a href={fileNameTrimmed}>{fileNameTrimmed}</a>
