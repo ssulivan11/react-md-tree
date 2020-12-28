@@ -48,7 +48,6 @@ const mdFileTree = async (dirPath, linkPrefix, depth = 0) => {
             const childStats = await FSUtils.statPromise(childPath);
             // @ts-ignore
             if (childStats.isDirectory()) {
-                delete tree.header;
                 const childLinkPrefix = `${linkPrefix}`;
                 const childDir = await mdFileTree(childPath, childLinkPrefix, depth + 1);
                 if (childDir !== null) {
@@ -74,7 +73,6 @@ const run = async (configPath) => {
         await initConfig(configPath || '.mdtree.json');
         const dirPath = path.resolve(FSUtils.resolveHome(getConfig('source')));
         const tree = await mdFileTree(dirPath, getConfig('linkPrefix'));
-        console.warn(JSON.stringify(tree));
         // @ts-ignore
         const treeHtml = ReactDOMServer.renderToStaticMarkup(<RootDirectory tree={tree} />);
         const outputPath = path.resolve(FSUtils.resolveHome(program.output || getConfig('output')));
