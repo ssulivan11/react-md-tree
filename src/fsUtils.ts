@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import pretty from 'pretty';
 
 export const readfilePromise = (filePath: string) =>
     new Promise((resolve, reject) =>
@@ -11,16 +12,19 @@ export const readdirPromise = (dirPath: string) =>
         fs.readdir(dirPath, (error, files) => (error ? reject(error) : resolve(files)))
     );
 
-export const writeFilePromise = (filepath: string, data: string, options: string) =>
-    new Promise((resolve, reject) =>
+export const writeFilePromise = (filepath: string, data: string, options: string) => {
+    const prettyData = pretty(data);
+
+    return new Promise((resolve, reject) =>
         fs.writeFile(
             filepath,
-            data,
+            prettyData,
             options,
             // @ts-ignore
             (error) => (error ? reject(error) : resolve())
         )
     );
+};
 
 export const statPromise = (filePath: string) =>
     new Promise((resolve, reject) =>

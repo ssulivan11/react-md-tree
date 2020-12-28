@@ -9,7 +9,7 @@ const File = ({ fileName }: IFileProps) => {
     const fileNameTrimmed = FSUtils.trimExtension(fileName.rootName);
     return (
         <li>
-            <a href={fileNameTrimmed}>{fileNameTrimmed}</a>
+            <span>{fileNameTrimmed}</span>
         </li>
     );
 };
