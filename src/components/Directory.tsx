@@ -7,6 +7,7 @@ const Directory = ({ tree, depth }: IDirectoryProps) => {
     return (
         <li>
             {hasRootMd ? <a href={rootName}>{rootName}</a> : <Fragment>{rootName}</Fragment>}
+
             <ul id={rootName} data-testid={rootName}>
                 {childDirs.map((childDir, index) => {
                     const hasChildren = childDir.childDirs.length + childDir.childFiles.length > 0;

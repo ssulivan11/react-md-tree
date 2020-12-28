@@ -2,14 +2,14 @@ import React from 'react';
 import * as FSUtils from '../fsUtils';
 
 interface IFileProps {
-    fileName: any;
+    fileName: string;
 }
 
 const File = ({ fileName }: IFileProps) => {
-    const fileNameTrimmed = FSUtils.trimExtension(fileName.rootName);
+    const fileNameTrimmed = FSUtils.trimExtension(fileName);
     return (
         <li>
-            <span>{fileNameTrimmed}</span>
+            <span data-testid={fileNameTrimmed}>{fileName}</span>
         </li>
     );
 };
