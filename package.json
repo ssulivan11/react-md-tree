@@ -1,6 +1,6 @@
 {
     "name": "react-md-tree",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Markdown directory tree generator.",
     "main": "dist/bundle.js",
     "repository": {
